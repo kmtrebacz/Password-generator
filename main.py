@@ -3,9 +3,6 @@ import string as strg
 from time import sleep as slp
 import os
 
-def yOrN():
-    print("\n[Y] Yes")
-    print("[N] No\n")
 
 def error():
     print("Error")
@@ -15,6 +12,21 @@ def error():
 def clr():
     os.system('cls')
 
+def yOrN():
+    print("\n[Y] Yes")
+    print("[N] No\n")
+
+def dataPrint():
+    print("Length:", length)
+
+    if decidePnct == "Y" or decidePnct == "y":
+        print("Punctuation: Yes")
+
+    elif decidePnct == "N" or decidePnct == "n":
+        print("Punctuation: None")
+    else:
+        error()
+
 
 lower = strg.ascii_lowercase
 upper = strg.ascii_uppercase
@@ -22,15 +34,17 @@ num = strg.digits
 pun = strg.punctuation
 
 
-print("version 1.16-c.1")
+print("version 1.15-c.1")
 slp(1)
 clr()
 
 print("Password generator by @kmtrebacz")
-print("Warning! Min length of password is 4 and max length 62")
 
 print("\nHow many characters do you want in your password?")
+print("Min length: 6\nMax lenght:62\n")
 length = int(input("->"))
+
+clr()
 
 if length <= 62 and length > 4:
 
@@ -47,6 +61,8 @@ if length <= 62 and length > 4:
         passwordWith = "".join(temp)
 
         clr()
+
+        dataPrint()
         print("\nYour password is:")
         print(passwordWith)
 
@@ -61,6 +77,8 @@ if length <= 62 and length > 4:
         passwordWithout = "".join(temp)
 
         clr()
+
+        dataPrint()
         print("\nYour password is:")
         print(passwordWithout)
 
